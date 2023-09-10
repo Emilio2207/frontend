@@ -8,7 +8,7 @@ const NosotrosPage = (props) => {
         <div className="row">
 
             <div className="image">
-                <img src="public/images/about.jpg" alt="nosotros"></img>
+                <img src="images/about.jpg" alt="nosotros"/>
             </div>
 
             <div className="content">

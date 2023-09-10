@@ -8,7 +8,7 @@ const ContactoPage = (props) => {
 <div className="row">
 
     <div className="image">
-        <img src="img/contact.png" alt=""></img>
+        <img src="images/contact.png" alt=""/>
     </div>
 
     <form action="">
@@ -16,26 +16,26 @@ const ContactoPage = (props) => {
 
         <div className="inputBox">
             <span className="fas fa-user"></span>
-            <input type="text" placeholder="nombre"></input>
+            <input type="text" placeholder="nombre"/>
         </div>
 
         <div className="inputBox">
             <span className="fas fa-envelope"></span>
-            <input type="email" placeholder="email"></input>
+            <input type="email" placeholder="email"/>
         </div>
 
         <div className="inputBox">
             <span className="fas fa-phone"></span>
-            <input type="number" placeholder="tel"></input>
+            <input type="number" placeholder="tel"/>
         </div>
 
         <div className="inputBox">
             <span className="fas fa-envelope-open-text"></span>
-            <input type="text" placeholder="mensaje"></input>
+            <input type="text" placeholder="mensaje"/>
             <textarea name=""></textarea>
         </div>
 
-        <input type="submit" value="enviar mensaje" className="btn"></input>
+        <input type="submit" value="enviar mensaje" className="btn"/>
 
     </form>
 

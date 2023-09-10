@@ -2,7 +2,7 @@ const Header = (props) => {
     return (
         <>
         <header className="header">
-            <a href="#" className="logo"> <i className="fas fa-coffee"></i> Coffee Shop</a>
+            <a href="logo" className="logo"> <i className="fas fa-coffee"></i> Coffee Shop</a>
 
         
 

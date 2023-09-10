@@ -3,7 +3,7 @@ const Nav = (props) => {
         <>
         <nav className="navbar">
             <div id="close-navbar" className="fas fa-times"></div>
-            <a href="#">home</a>
+            <a href="#home">home</a>
             <a href="#nosotros">nosotros</a>
             <a href="#menu">menu</a>
             <a href="#novedades">novedades</a>
