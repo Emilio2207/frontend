@@ -1,4 +1,6 @@
-const Header = (props) => {
+import '../styles/layout/Index.css';
+
+const Index = (props) => {
     return (
         <>
         <header className="header">
@@ -209,4 +211,4 @@ const Header = (props) => {
     );
 }
 
-export default Header;
+export default Index;

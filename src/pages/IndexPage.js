@@ -1,3 +1,5 @@
+import '../styles/pages/IndexPage.css';
+
 const IndexPage = (props) => {
     return (
         <>
