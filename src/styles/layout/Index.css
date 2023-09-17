@@ -499,3 +499,7 @@ section{
     }
 
 }
+
+.activo{
+    color: red;
+}
