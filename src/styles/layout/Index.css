@@ -216,6 +216,10 @@ section{
     gap: 1.5rem;
 }
 
+.header .navbar a.active {
+    color: var(--primary-color);
+}
+
 .menu .box-container .box{
     padding: 5rem;
     text-align: center;
