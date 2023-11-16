@@ -2,13 +2,18 @@ import React from "react";
 
 const NovedadItem = (props) => {
   const { title, subtitle, imagen, body } = props;
+  const isBodyText = body && !/<[a-z][\s\S]*>/i.test(body);
 
   return (
     <div className="box">
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <img src={imagen} alt="Descripción de la imagen" />
-      <div dangerouslySetInnerHTML={{ __html: body }} />
+      {title && <h3>{title}</h3>}
+      {subtitle && <h4>{subtitle}</h4>}
+      {imagen && <img src={imagen} alt="Descripción de la imagen" />}
+      {isBodyText ? (
+        <p>{body}</p>
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: body }} />
+      )}
       <hr />
     </div>
   );

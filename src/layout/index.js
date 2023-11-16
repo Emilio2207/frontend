@@ -164,37 +164,37 @@ const Index = (props) => {
           <div className="box">
             <img src="images/menu-1.png" alt="" />
             <h3>Café Espresso</h3>
-            <div className="price">$100</div>
+            <div className="price">$1.000</div>
           </div>
 
           <div className="box">
             <img src="images/menu-2.png" alt="" />
             <h3>Cortado o macchiato</h3>
-            <div className="price">$150</div>
+            <div className="price">$1.500</div>
           </div>
 
           <div className="box">
             <img src="images/menu-3.png" alt="" />
             <h3>Americano</h3>
-            <div className="price">$200</div>
+            <div className="price">$2.000</div>
           </div>
 
           <div className="box">
             <img src="images/menu-4.png" alt="" />
             <h3>Café con leche</h3>
-            <div className="price">$250</div>
+            <div className="price">$2.500</div>
           </div>
 
           <div className="box">
             <img src="images/menu-5.png" alt="" />
             <h3>Capuchino</h3>
-            <div className="price">$300</div>
+            <div className="price">$3.000</div>
           </div>
 
           <div className="box">
             <img src="images/menu-6.png" alt="" />
             <h3>Café irlandés</h3>
-            <div className="price">$350</div>
+            <div className="price">$3.500</div>
           </div>
         </div>
       </section>
@@ -207,19 +207,13 @@ const Index = (props) => {
             <p>Cargando...</p>
           ) : (
             novedades.map((item) => (
-              <div className="box" key={item.id}>
-                <h3>{item.titulo}</h3>
-                <h4>{item.subtitulo}</h4>
-                <img src={item.imagen} alt={item.titulo} />
-                <p>{item.cuerpo}</p>
-                <NovedadItem
-                  key={item.id}
-                  title={item.titulo}
-                  subtitle={item.subtitulo}
-                  imagen={item.imagen}
-                  body={item.cuerpo}
-                />
-              </div>
+              <NovedadItem
+                key={item.id}
+                title={item.titulo}
+                subtitle={item.subtitulo}
+                imagen={item.imagen}
+                body={item.cuerpo}
+              />
             ))
           )}
         </div>
