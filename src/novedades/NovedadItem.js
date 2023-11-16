@@ -4,10 +4,10 @@ const NovedadItem = (props) => {
   const { title, subtitle, imagen, body } = props;
 
   return (
-    <div className="novedades">
+    <div className="box">
       <h1>{title}</h1>
       <h2>{subtitle}</h2>
-      <img src={imagen} />
+      <img src={imagen} alt="Descripción de la imagen" />
       <div dangerouslySetInnerHTML={{ __html: body }} />
       <hr />
     </div>
