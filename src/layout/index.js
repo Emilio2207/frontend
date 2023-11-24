@@ -48,6 +48,39 @@ const Index = (props) => {
     cargarNovedades();
   }, []);
 
+  const initialFrom = {
+    nombre: "",
+    email: "",
+    telefono: "",
+    mensaje: "",
+  };
+  const [sending, setSending] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [formData, setFromData] = useState(initialFrom);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFromData((oldData) => ({
+      ...oldData,
+      [name]: value, // forma dinamica
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMsg("");
+    setSending(true);
+    const response = await axios.post(
+      "http://localhost:3000/api/contacto",
+      formData
+    );
+    setSending(false);
+    setMsg(response.data.message);
+    if (response.data.error === false) {
+      setFromData(initialFrom);
+    }
+  };
+
   return (
     <>
       <header className="header">
@@ -227,31 +260,56 @@ const Index = (props) => {
             <img src="images/contact.png" alt="" />
           </div>
 
-          <form action="">
+          <form action="/contacto" method="post" onSubmit={handleSubmit}>
             <h3>Ponete en contacto</h3>
 
             <div className="inputBox">
               <span className="fas fa-user"></span>
-              <input type="text" placeholder="nombre" />
+              <input
+                type="text"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+                placeholder="nombre"
+              />
             </div>
 
             <div className="inputBox">
               <span className="fas fa-envelope"></span>
-              <input type="email" placeholder="email" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="email"
+              />
             </div>
 
             <div className="inputBox">
               <span className="fas fa-phone"></span>
-              <input type="number" placeholder="tel" />
+              <input
+                type="number"
+                name="telefono"
+                value={formData.telefono}
+                onChange={handleChange}
+                placeholder="tel"
+              />
             </div>
 
             <div className="inputBox">
               <span className="fas fa-envelope-open-text"></span>
               <input type="text" placeholder="mensaje" />
-              <textarea name=""></textarea>
+              <textarea
+                name="mensaje"
+                value={formData.mensaje}
+                onChange={handleChange}
+              ></textarea>
             </div>
 
             <input type="submit" value="enviar mensaje" className="btn" />
+
+            {sending ? <p>Enviando...</p> : null}
+            {msg ? <p>{msg}</p> : null}
           </form>
         </div>
       </section>
