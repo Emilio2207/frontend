@@ -308,9 +308,9 @@ const Index = (props) => {
                 placeholder="mensaje"
               />
               <textarea
-                name="mensaje"
+              /*name="mensaje"
                 value={formData.mensaje}
-                onChange={handleChange}
+                onChange={handleChange}*/
               ></textarea>
             </div>
 
