@@ -40,7 +40,9 @@ const Index = (props) => {
     const cargarNovedades = async () => {
       setLoading(true);
       //const response=await axios.get(`${process.env.REACT_APP_API_URL}/api/novedades`);
-      const response = await axios.get("http://localhost:3000/api/novedades");
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/novedades`
+      );
       debugger;
       setNovedades(response.data);
       setLoading(false);
