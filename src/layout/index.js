@@ -298,7 +298,13 @@ const Index = (props) => {
 
             <div className="inputBox">
               <span className="fas fa-envelope-open-text"></span>
-              <input type="text" placeholder="mensaje" />
+              <input
+                type="text"
+                name="mensaje"
+                value={formData.mensaje}
+                onChange={handleChange}
+                placeholder="mensaje"
+              />
               <textarea
                 name="mensaje"
                 value={formData.mensaje}
